@@ -1,0 +1,21 @@
+asset,criticality,simulated
+Nurse Workstation,3,True
+EHR Server,5,True
+Infusion Pump Network,5,True
+Pharmacy System,5,True
+Nurse Workstation,3,True
+Nurse Workstation,3,True
+Guest Wi-Fi,1,True
+EHR Server,5,True
+PACS Imaging,4,True
+EHR Server,5,True
+Pharmacy System,5,True
+Lab System,4,True
+EHR Server,5,True
+Pharmacy System,5,True
+Nurse Workstation,3,True
+Lab System,4,True
+Pharmacy System,5,True
+Lab System,4,True
+Admin Office PC,2,True
+EHR Server,5,True

@@ -1,0 +1,4 @@
+variant,accuracy,precision,recall,f1
+original IP,0.9999,1.0,0.9999,1.0
+hashed IP (privacy),0.9999,1.0,0.9999,0.9999
+masked IP (aggressive),0.9999,1.0,0.9999,0.9999
