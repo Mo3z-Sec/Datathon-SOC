@@ -1,0 +1,22 @@
+features: 42
+matches scaler_unsw.json columns: True
+rows -> train (149039, 42) val (26302, 42) test (82332, 42)
+attack share: train 0.681, test 0.551
+train time 6.1s
+inference 0.0019 ms/record
+test AUC: 0.9822
+
+thr  | VAL fpr rec | TEST fpr rec prec acc
+0.3  | 0.144 0.996 | 0.385 0.998 0.761 0.826
+0.5  | 0.082 0.981 | 0.273 0.987 0.816 0.871
+0.6  | 0.053 0.967 | 0.202 0.974 0.855 0.895
+0.7  | 0.033 0.945 | 0.136 0.950 0.896 0.912
+0.8  | 0.016 0.913 | 0.067 0.918 0.944 0.924
+0.9  | 0.005 0.867 | 0.020 0.871 0.982 0.920
+0.95 | 0.002 0.831 | 0.007 0.812 0.993 0.893
+
+reference threshold (first with val FPR < 2%): 0.8
+TEST: acc 0.9245 prec 0.9436 rec 0.9176 fpr 0.0672
+
+(no attack_cat column in these CSVs, so no per-attack breakdown)
+saved model_unsw.pkl and model_features_unsw.json
