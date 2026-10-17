@@ -1,6 +1,6 @@
 # models/
 
-Owner: **Hanan, Bardia**
+Owner: **Hanan**
 
 Put trained models and their entry points here.
 
