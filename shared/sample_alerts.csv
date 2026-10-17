@@ -1,0 +1,25 @@
+timestamp,asset,criticality,src_ip_hashed,network_score,anomaly_score,threat_flag,risk_score,recommended_action
+2026-10-17T06:22:02Z,Admin Office PC,2,83c600d1828c,0.338,0.049,0,0.196,Monitor and log.
+2026-10-17T06:23:02Z,Lab System,4,db9b7990839b,0.107,0.029,0,0.08,Monitor and log.
+2026-10-17T06:24:02Z,Nurse Workstation,3,db9b7990839b,0.246,0.219,0,0.213,Monitor and log.
+2026-10-17T06:25:02Z,Infusion Pump Network,5,69f325ddaecf,0.033,0.167,0,0.084,Monitor and log.
+2026-10-17T06:26:02Z,PACS Imaging,4,2f1b449c6ec9,0.05,0.059,0,0.052,Monitor and log.
+2026-10-17T06:27:02Z,Guest Wi-Fi,1,c139613b4f0b,0.189,0.129,0,0.122,Monitor and log.
+2026-10-17T06:28:02Z,Nurse Workstation,3,c139613b4f0b,0.347,0.018,0,0.214,Monitor and log.
+2026-10-17T06:29:02Z,Guest Wi-Fi,1,c139613b4f0b,0.169,0.14,0,0.115,Monitor and log.
+2026-10-17T06:30:02Z,Admin Office PC,2,80501634ab63,0.172,0.134,0,0.129,Monitor and log.
+2026-10-17T06:31:02Z,EHR Server,5,2b2d67a4ffcf,0.024,0.262,0,0.112,Monitor and log.
+2026-10-17T06:32:02Z,EHR Server,5,26d9ee476aef,0.738,0.55,0,0.729,Block source and alert the analyst.
+2026-10-17T06:33:02Z,PACS Imaging,4,26d9ee476aef,0.233,0.112,0,0.191,Monitor and log.
+2026-10-17T06:34:02Z,Lab System,4,26d9ee476aef,0.288,0.012,0,0.194,Monitor and log.
+2026-10-17T06:35:02Z,PACS Imaging,4,66b5727fc975,0.318,0.077,0,0.235,Monitor and log.
+2026-10-17T06:36:02Z,Infusion Pump Network,5,d602b56045e1,0.319,0.166,0,0.289,Monitor and log.
+2026-10-17T06:37:02Z,Pharmacy System,5,aebc00b716f5,0.034,0.083,0,0.054,Monitor and log.
+2026-10-17T06:38:02Z,Admin Office PC,2,aebc00b716f5,0.866,0.561,1,0.709,Block source and alert the analyst.
+2026-10-17T06:39:02Z,Admin Office PC,2,aebc00b716f5,0.898,0.381,1,0.678,Block source and alert the analyst.
+2026-10-17T06:40:02Z,PACS Imaging,4,aebc00b716f5,0.112,0.13,0,0.117,Monitor and log.
+2026-10-17T06:41:02Z,EHR Server,5,aebc00b716f5,0.224,0.055,0,0.181,Monitor and log.
+2026-10-17T06:42:02Z,Pharmacy System,5,aebc00b716f5,0.156,0.087,0,0.144,Monitor and log.
+2026-10-17T06:43:02Z,Guest Wi-Fi,1,aebc00b716f5,0.112,0.033,0,0.062,Monitor and log.
+2026-10-17T06:44:02Z,Lab System,4,21562349769f,0.312,0.138,0,0.251,Monitor and log.
+2026-10-17T06:45:02Z,Lab System,4,b6aea79271d8,0.933,0.833,0,0.891,Isolate affected subnet; keep clinical systems running; escalate to on-call.

@@ -1,0 +1,18 @@
+# Raw downloads (large, reproducible via download_data.py)
+data/
+
+# Secret key - NEVER commit
+secret.key
+
+# Caches and scratch
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+run*.log
+pipeline_full.txt
+pipeline-run.txt
+venv/
+.venv/
+env/
+.DS_Store
+Thumbs.db
