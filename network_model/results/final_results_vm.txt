@@ -1,0 +1,25 @@
+FINAL MODEL: IBM Snap ML RandomForest, threshold 0.8
+VALIDATION: acc 0.9263 prec 0.9911 rec 0.8997 fpr 0.0171
+   confusion: TN=11008 FP=192 FN=2394 TP=21475
+TEST      : acc 0.9237 prec 0.9592 rec 0.8997 fpr 0.0469
+   confusion: TN=35265 FP=1735 FN=4545 TP=40787
+
+Per group on TEST:
+(attack groups: share detected; Normal: share wrongly flagged = false alarm rate)
+                 share_flagged   rows
+group                                
+Analysis                 0.951    677
+DoS/DDoS                 0.959   4089
+Exploits                 0.934  11132
+Fuzzers                  0.456   6062
+Generic                  0.995  18871
+Malware-like             0.880   1005
+Normal                   0.047  37000
+Port scan/Recon          0.973   3496
+
+saved cybershield_network_model.joblib
+handoff test (reloaded model reproduces predictions): PASS
+   risk_score  is_attack
+0        90.5          1
+1        85.3          1
+2        74.2          0
