@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets - never commit
+secret.key
+
+# Raw data (reproducible via download_data.py)
+data/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~

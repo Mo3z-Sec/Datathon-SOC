@@ -16,7 +16,7 @@ git checkout -b nour/data-pipeline
 Git 2.55 + Git Credential Manager on Windows will pop up a browser login.
 
 ```bash
-git add nour_data_pipeline
+git add data_pipeline shared models engine dashboard deploy INTEGRATION.md
 git commit -m "Add Nour data pipeline: clean split, hospital assets, privacy demo, accuracy test"
 git push -u origin nour/data-pipeline
 ```

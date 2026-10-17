@@ -12,7 +12,7 @@
 
 ## How to run
 ```powershell
-cd nour_data_pipeline
+cd data_pipeline
 pip install -r requirements.txt
 python download_data.py
 python pipeline.py
@@ -22,6 +22,8 @@ python threat_intel.py
 ```
 
 Or run everything via PowerShell: `.\run_all.ps1`
+
+On IBM LinuxONE (Ubuntu s390x) run: `bash run_on_linuxone.sh`
 
 ## Notes on privacy
 - IPs are anonymized using HMAC-SHA256 (same IP → same hash, repeatable) so patterns remain; masked form (`x.y.z.0`) is also provided.
@@ -78,7 +80,7 @@ Trained the same RandomForest (60 trees) on three representations of the Source/
 ## Handoff message for the group (copy/paste)
 > CyberShield AI - Nour's data pipeline is ready.
 >
-> Files (repo: nour_data_pipeline/outputs/):
+> Files (repo: data_pipeline/outputs/):
 > - unsw_train.csv (149,039), unsw_val.csv (26,302), unsw_test.csv (82,332) + scaler_unsw.json + encoders_unsw.json
 > - cicids_train.csv (105,000), cicids_val.csv (22,500), cicids_test.csv (22,500) + scaler_cicids.json
 > - assets.csv (asset + criticality, SIMULATED) for Jason
