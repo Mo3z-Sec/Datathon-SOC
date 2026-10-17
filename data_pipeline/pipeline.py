@@ -119,16 +119,23 @@ def process_cicids():
     if not files:
         print('CICIDS files missing or partial. Run download_data.py first.')
         return
+    PER_FILE=25000
     dfs=[]
     for p in files:
         try:
             df=pd.read_csv(p,low_memory=False)
+            df.columns=df.columns.str.strip()
+            if 'Label' in df.columns:
+                df['label_binary']=df['Label'].astype(str).apply(lambda x: 0 if 'BENIGN' in x.upper() else 1)
+            if len(df)>PER_FILE:
+                df=df.sample(PER_FILE,random_state=42)
             dfs.append(df)
-            print('read',p.name,df.shape)
+            print('read',p.name,'->',len(df))
         except Exception as e:
             print('ERR',p,e)
     if not dfs: return
     df=pd.concat(dfs,ignore_index=True)
+    del dfs
     df=clean_df(df)
     if len(df)==0:
         print('CICIDS empty after clean'); return
