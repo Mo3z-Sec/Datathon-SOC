@@ -1,0 +1,82 @@
+﻿CyberShield AI - LinuxONE run proof
+===================================
+date        : 2026-10-17 07:18:36 UTC
+host        : neurospark-datathon
+arch        : s390x
+os          : Ubuntu 24.04.5 LTS
+python      : Python 3.12.3
+cpu / mem   : 3 cores, 7.8Gi RAM, no swap
+branch      : nour/data-pipeline @ 60c396c
+
+How it was run:
+  git clone https://github.com/Mo3z-Sec/Datathon-SOC.git
+  git checkout nour/data-pipeline
+  bash data_pipeline/run_on_linuxone.sh
+
+Step results
+------------
+==> host: neurospark-datathon | arch: s390x
+==> python: Python 3.12.3
+==> sudo requires a password -> skipping apt, using installed system packages
+==> checking required imports
+==> download datasets (~1 GB)
+    OK: download datasets (~1 GB)
+==> clean + split
+    OK: clean + split
+==> hospital asset table (simulated)
+    OK: hospital asset table (simulated)
+==> privacy demo (hash/mask IPs)
+    OK: privacy demo (hash/mask IPs)
+==> accuracy proof (original vs hashed vs masked)
+    OK: accuracy proof (original vs hashed vs masked)
+==> threat intel (OpenPhish/URLhaus)
+    OK: threat intel (OpenPhish/URLhaus)
+==> outputs:
+==> Screenshot this for the judges: the pipeline runs on LinuxONE s390x.
+
+Split row counts
+----------------
+  unsw_train     149039
+  unsw_val       26302
+  unsw_test      82332
+  cicids_train   105000
+  cicids_val     22500
+  cicids_test    22500
+
+Patient-privacy accuracy test (CICIDS2017 DDoS)
+-----------------------------------------------
+variant,accuracy,precision,recall,f1
+original IP,0.9999,1.0,0.9999,0.9999
+hashed IP (privacy),0.9999,1.0,0.9999,0.9999
+masked IP (aggressive),0.9999,1.0,0.9999,0.9999
+
+  -> hashing IPs changed accuracy by 0.00 percentage points
+  -> Patient privacy costs almost no accuracy.
+
+Hashing preview (same IP -> same repeatable hash)
+-------------------------------------------------
+Source IP,Destination IP,Label,Source IP hashed,Source IP masked,Destination IP masked
+104.16.207.165,192.168.10.5,BENIGN,0b382aa71892,104.16.207.0,192.168.10.0
+104.16.28.216,192.168.10.5,BENIGN,6490f5d168ff,104.16.28.0,192.168.10.0
+104.16.28.216,192.168.10.5,BENIGN,6490f5d168ff,104.16.28.0,192.168.10.0
+
+Outputs generated on LinuxONE at
+---------------------------------
+  2026-10-17 07:07 167  accuracy_comparison.csv
+  2026-10-17 07:07 36K  accuracy_comparison.png
+  2026-10-17 07:07 455  assets.csv
+  2026-10-17 07:07 16M  cicids_test.csv
+  2026-10-17 07:07 74M  cicids_train.csv
+  2026-10-17 07:07 16M  cicids_val.csv
+  2026-10-17 07:06 2.0K  encoders_unsw.json
+  2026-10-17 07:07 72K  privacy_before_after.png
+  2026-10-17 07:07 142K  privacy_preview.csv
+  2026-10-17 07:07 5.3K  scaler_cicids.json
+  2026-10-17 07:06 2.7K  scaler_unsw.json
+  2026-10-17 07:07 1.5M  threat_urls.csv
+  2026-10-17 07:06 34M  unsw_test.csv
+  2026-10-17 07:06 60M  unsw_train.csv
+  2026-10-17 07:06 11M  unsw_val.csv
+
+Datasets are public stand-ins; asset table is simulated.
+No real patient data. secret.key and data/ are gitignored.
