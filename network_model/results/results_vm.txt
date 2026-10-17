@@ -1,0 +1,34 @@
+Rows -> train (140272, 34) val (35069, 34) test (82332, 34)
+
+=== scikit-learn RandomForest ===
+train time 6.7s | inference 0.0028 ms/record
+VAL : acc 0.9518 prec 0.9535 rec 0.9768 fpr 0.1015
+TEST: acc 0.8646 prec 0.8150 rec 0.9754 fpr 0.2712
+
+=== IBM Snap ML RandomForest ===
+train time 5.2s | inference 0.0019 ms/record
+VAL : acc 0.9520 prec 0.9495 rec 0.9816 fpr 0.1113
+TEST: acc 0.8602 prec 0.8081 rec 0.9784 fpr 0.2847
+
+Snap ML per group on TEST (share classified correctly):
+                  rate   rows
+group                        
+Analysis         1.000    677
+DoS/DDoS         0.994   4089
+Exploits         0.989  11132
+Fuzzers          0.869   6062
+Generic          1.000  18871
+Malware-like     0.980   1005
+Normal           0.715  37000
+Port scan/Recon  0.996   3496
+
+Threshold sweep (Snap ML): thr | VAL fpr rec | TEST fpr rec prec acc
+0.3   | 0.168 0.997 | 0.398 0.996 0.754 0.819
+0.5   | 0.111 0.982 | 0.285 0.978 0.808 0.860
+0.6   | 0.072 0.965 | 0.199 0.960 0.855 0.888
+0.7   | 0.047 0.943 | 0.128 0.936 0.899 0.907
+0.8   | 0.017 0.900 | 0.047 0.900 0.959 0.924
+0.9   | 0.007 0.853 | 0.015 0.858 0.986 0.915
+0.95  | 0.004 0.819 | 0.005 0.811 0.995 0.894
+
+saved snap_rf_vm.joblib

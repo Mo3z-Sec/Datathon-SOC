@@ -3,13 +3,22 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+venv2/
 env/
+.ipynb_checkpoints/
 
-# Secrets - never commit
-secret.key
-
-# Raw data (reproducible via download_data.py)
+# Data / model artifacts (large, reproducible)
 data/
+*.csv
+*.parquet
+*.joblib
+
+# The integration contract samples stay in the repo
+!shared/*.csv
+
+# Secrets - NEVER commit
+secret.key
+*.pem
 
 # OS / editor
 .DS_Store
