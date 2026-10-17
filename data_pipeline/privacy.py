@@ -2,6 +2,8 @@ import os, hmac, hashlib, random
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # headless LinuxONE has no display
 import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).parent
