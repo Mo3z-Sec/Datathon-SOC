@@ -1,0 +1,26 @@
+train (199972, 78) val (66658, 78) test (66658, 78)
+train time 9.9s
+inference 0.0017 ms/record
+
+thr | VAL fpr rec | TEST fpr rec prec acc
+0.5 | 0.0009 0.9962 | 0.0010 0.9964 0.9985 0.9980
+0.6 | 0.0007 0.9923 | 0.0009 0.9923 0.9986 0.9964
+0.7 | 0.0007 0.9906 | 0.0008 0.9902 0.9987 0.9956
+0.8 | 0.0006 0.9879 | 0.0008 0.9875 0.9988 0.9945
+0.9 | 0.0005 0.9817 | 0.0007 0.9818 0.9989 0.9923
+
+chosen threshold (first with val FPR < 2%): 0.5
+TEST: acc 0.9980 prec 0.9985 rec 0.9964 fpr 0.0010
+
+Per group on TEST (attacks: share detected; Normal: false alarm rate):
+                 share_flagged   rows
+group                                
+Brute force             0.9989   1830
+DoS/DDoS                0.9985  12000
+Malware-like            0.8385    390
+Normal                  0.0010  40000
+Other                   0.6000     10
+Port scan/Recon         1.0000  12000
+Web attack              0.9813    428
+
+saved cicids_model.joblib
