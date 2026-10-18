@@ -1,0 +1,4 @@
+# Runtime dependencies (all pure Python or with published s390x wheels). Python 3.9+.
+fastapi>=0.100,<1.0
+uvicorn>=0.23,<1.0
+pydantic>=1.10.13,<3

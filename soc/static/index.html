@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital SOC Alert Center (simulated data)</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="banner" class="sim-banner" role="note">SIMULATED DATA ONLY &mdash; no real patients, systems or incidents. This tool is read-only and takes no action on any hospital system.</div>
+
+  <div id="login-view" class="login hidden">
+    <form id="login-form" class="card login-card" autocomplete="off">
+      <h1>Hospital SOC Alert Center</h1>
+      <p class="muted">Enter your access token to continue.</p>
+      <label class="field"><span class="field-label">Access token</span>
+        <input id="token-input" type="password" required autocomplete="off" spellcheck="false"></label>
+      <p id="login-error" class="error" role="alert"></p>
+      <button type="submit" class="btn primary">Sign in</button>
+    </form>
+  </div>
+
+  <div id="app-view" class="hidden">
+    <header class="topbar">
+      <div class="brand">Hospital SOC <span class="muted">Alert Center</span></div>
+      <nav id="nav" aria-label="Main"></nav>
+      <div class="topbar-right">
+        <label class="auto"><input id="auto-refresh" type="checkbox"> Auto-refresh</label>
+        <span id="role-badge" class="badge"></span>
+        <span id="ai-badge" class="badge"></span>
+        <button id="logout-btn" class="btn ghost" type="button">Sign out</button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <aside id="drawer" class="drawer hidden" aria-label="Alert details"></aside>
+  </div>
+
+  <div id="modal"></div>
+  <div id="toasts" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# systemd unit template. Install with (from the project folder):
+#   sed -e "s|__USER__|$USER|g" -e "s|__DIR__|$PWD|g" deploy/hospital-soc.service | sudo tee /etc/systemd/system/hospital-soc.service
+#   sudo systemctl daemon-reload && sudo systemctl enable --now hospital-soc
+[Unit]
+Description=Hospital SOC Alert System (simulated data)
+After=network.target
+
+[Service]
+Type=simple
+User=__USER__
+Group=__USER__
+WorkingDirectory=__DIR__
+EnvironmentFile=__DIR__/.env
+ExecStart=__DIR__/.venv/bin/python -m uvicorn soc.asgi:app --host ${SOC_HOST} --port ${SOC_PORT}
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=__DIR__/data __DIR__/logs __DIR__/run
+
+[Install]
+WantedBy=multi-user.target
