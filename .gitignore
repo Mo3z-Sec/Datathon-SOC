@@ -1,26 +1,11 @@
-# Python
-__pycache__/
-*.py[cod]
+.env
 .venv/
-venv/
-venv2/
-env/
-.ipynb_checkpoints/
+__pycache__/
+*.pyc
+data/soc.db*
+logs/
+run/
 
-# Data / model artifacts (large, reproducible)
-data/
-*.csv
-*.parquet
-*.joblib
-
-# The integration contract samples stay in the repo
-!shared/*.csv
-
-# Secrets - NEVER commit
 secret.key
+*.key
 *.pem
-
-# OS / editor
-.DS_Store
-Thumbs.db
-*~
