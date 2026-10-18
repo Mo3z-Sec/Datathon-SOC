@@ -1,0 +1,52 @@
+{
+  "model": "PCA reconstruction error",
+  "n_components": 10,
+  "explained_variance": 0.9980961339328013,
+  "precision": 0.8880758807588076,
+  "recall": 0.9729809976247031,
+  "f1": 0.9285916690280532,
+  "false_positive_rate": 0.0036992252228044246,
+  "roc_auc": 0.9963892128075192,
+  "avg_precision": 0.8047892505670412,
+  "critical": {
+    "threshold": 1.761378773797274e-05,
+    "precision": 0.8880758807588076,
+    "recall": 0.9729809976247031,
+    "f1": 0.9285916690280532,
+    "false_positive_rate": 0.0036992252228044246,
+    "alerts_per_1000_blocks": 32.08332971055446,
+    "confusion": {
+      "tn": 111232,
+      "fp": 413,
+      "fn": 91,
+      "tp": 3277
+    }
+  },
+  "warning": {
+    "threshold": 9.292967665299426e-07,
+    "precision": 0.6223671947809879,
+    "recall": 0.9913895486935868,
+    "f1": 0.7646856750257643,
+    "false_positive_rate": 0.018146804603878363,
+    "alerts_per_1000_blocks": 46.646900785128636,
+    "confusion": {
+      "tn": 109619,
+      "fp": 2026,
+      "fn": 29,
+      "tp": 3339
+    }
+  },
+  "warn_recall_target": 0.99,
+  "val_f1": 0.9301334848054531,
+  "n_train": 345035,
+  "n_test": 115013,
+  "train_seconds": 1.005,
+  "inference_seconds_total": 0.079,
+  "inference_ms_per_block": 0.0007,
+  "platform": {
+    "machine": "s390x",
+    "byteorder": "big",
+    "python": "3.12.3",
+    "cpus": 3
+  }
+}
