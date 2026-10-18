@@ -1,0 +1,26 @@
+# Usage:  docker compose up -d --build      (needs a .env file: run `python3 -m soc.cli init-env` first)
+services:
+  soc:
+    build: .
+    image: hospital-soc:1.0.0
+    container_name: hospital-soc
+    env_file: .env
+    environment:               # these override .env inside the container
+      SOC_HOST: 0.0.0.0
+      SOC_PORT: "8000"
+      SOC_DB_PATH: /app/data/soc.db
+      SOC_ASSETS_PATH: /app/assets/assets.csv
+    ports:
+      - "127.0.0.1:8000:8000"  # localhost only; use an SSH tunnel or a TLS reverse proxy to reach it
+    volumes:
+      - soc-data:/app/data     # SQLite database lives in this named volume
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  soc-data:
